@@ -9,7 +9,7 @@
 </template>
 
 <script type="text/javascript">
-import Home from "./Home.vue";
+import Home from "./03-setup的返回值.vue";
 
 export default {
   name: "app",

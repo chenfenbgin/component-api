@@ -2,7 +2,9 @@
   <div id="app">
     home page
     <h2>{{ message }}</h2>
-    <button @click="btnClick">按钮</button>
+    <h2>{{ title }}</h2>
+    <h2>当前计算： {{ counter }}</h2>
+    <!-- <button @click="btnClick">按钮</button> -->
   </div>
 </template>
 
@@ -46,6 +48,12 @@ export default {
     console.log(attrs.id, attrs.class);
     console.log(slots);
     console.log(emit);
+
+    // 这里可以返回数据，就不需要data(){return{}},
+    return {
+      title: "hello home",
+      counter: 100,
+    };
   },
 };
 </script>
