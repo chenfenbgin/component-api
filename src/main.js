@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './2-compositionAPI基础/App.vue'
+import App from './3-RefAPI的补充/App.vue'
 
 const app = createApp(App);
 
