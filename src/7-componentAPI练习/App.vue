@@ -5,11 +5,19 @@
     <button @click="increment">+1</button>
     <button @click="decrement">-1</button>
 
+    <h2>{{ data }}</h2>
+    <button @click="changeData">按钮</button>
+
     <p class="content"></p>
 
     <div class="scroll">
       <div class="scroll-x">scrollX: {{ scrollX }}</div>
       <div class="scroll-y">scrollY: {{ scrollY }}</div>
+    </div>
+
+    <div class="mouse">
+      <div class="mouse-x">scrollX: {{ mouseX }}</div>
+      <div class="mouse-y">scrollY: {{ mouseY }}</div>
     </div>
   </div>
 </template>
@@ -18,6 +26,8 @@
 import useCounter from "./hook/useCounter";
 import useTitle from "./hook/useTitle";
 import useScrollPosition from "./hook/useScrollPosition";
+import useMousePosition from "./hook/useMousePosition";
+import useLocalStorage from "./hook/useLocalStorage";
 // import { ref } from "vue";
 
 export default {
@@ -43,13 +53,29 @@ export default {
     //   scrollY.value = window.scrollY;
     // });
     const { scrollX, scrollY } = useScrollPosition();
+
+    // 监听鼠标移动位置
+    const { mouseX, mouseY } = useMousePosition();
+
+    //localStorage使用, 第二次没有传，也是可以获取到info的
+    const data = useLocalStorage("info", { name: "chenfeng", age: 22 });
+    // 当我拿到data是，也可以修改里面的值
+    const changeData = () => data.value = "hahhhhahahh"
+
     return {
       counter,
       doubleCounter,
       increment,
       decrement,
+
       scrollX,
       scrollY,
+
+      mouseX,
+      mouseY,
+
+      data,
+      changeData
     };
   },
 
@@ -86,5 +112,10 @@ export default {
   position: fixed;
   right: 30px;
   bottom: 30px;
+}
+
+.mouse {
+  position: fixed;
+  bottom: 8px;
 }
 </style>
