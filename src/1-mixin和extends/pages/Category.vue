@@ -1,24 +1,15 @@
 <template>
-  <div id="app">
-     category Page
-  </div>
+  <div id="app">category Page</div>
 </template>
 
 <script type="text/javascript">
-
 export default {
   name: "app",
   data() {
-    return {
-
-    }
+    return {};
   },
-  components: {
-    
-  }
-}
+  components: {},
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

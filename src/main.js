@@ -3,6 +3,7 @@ import App from './7-componentAPI练习/App.vue'
 
 const app = createApp(App);
 
+// 全局混入mixin
 // app.mixin({
 //   data() {
 //     return {

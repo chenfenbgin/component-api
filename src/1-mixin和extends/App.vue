@@ -11,7 +11,7 @@
 import { demoMixin } from "./mixins/demoMixin";
 export default {
   name: "app",
-  // 把要混入的对象放到这个数组里面
+  // 把要混入的对象放到这个数组里面, 我们这里将demoMixin.js混入到App.vue，这个时候就像是跟App.vue对象进行合并了呢
   mixins: [demoMixin],
   data() {
     return {
@@ -28,5 +28,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -5,6 +5,7 @@
 <script type="text/javascript">
 export default {
   name: "app",
+  // 将 title属性 和 bar()进行混入
   data() {
     return {
       title: "hello page",
@@ -19,5 +20,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
