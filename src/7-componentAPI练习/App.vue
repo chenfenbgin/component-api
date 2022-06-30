@@ -60,7 +60,7 @@ export default {
     //localStorage使用, 第二次没有传，也是可以获取到info的
     const data = useLocalStorage("info", { name: "chenfeng", age: 22 });
     // 当我拿到data是，也可以修改里面的值
-    const changeData = () => data.value = "hahhhhahahh"
+    const changeData = () => (data.value = "hahhhhahahh");
 
     return {
       counter,
@@ -75,7 +75,7 @@ export default {
       mouseY,
 
       data,
-      changeData
+      changeData,
     };
   },
 

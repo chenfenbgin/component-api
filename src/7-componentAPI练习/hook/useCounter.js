@@ -1,3 +1,4 @@
+// 文件名称一般使用use进行开头，抽取成hook
 import { ref, computed } from "vue";
 
 export default function () {
@@ -11,6 +12,6 @@ export default function () {
     counter,
     doubleCounter,
     increment,
-    decrement
-  }
+    decrement,
+  };
 }

@@ -24,6 +24,7 @@ export default {
       counter: 100,
     });
 
+    console.log(state);
     // 局部函数
     const increment = () => {
       state.counter++;

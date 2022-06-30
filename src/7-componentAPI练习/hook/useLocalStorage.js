@@ -1,4 +1,4 @@
-import { ref, watch } from 'vue'
+import { ref, watch } from "vue";
 
 // 本地缓存， 需要传入key value
 export default function (key, value) {
@@ -15,7 +15,7 @@ export default function (key, value) {
 
   watch(data, (newValue) => {
     window.localStorage.setItem(key, JSON.stringify(newValue));
-  })
+  });
 
   return data;
 }

@@ -12,6 +12,7 @@ import { inject } from "vue";
 
 export default {
   setup() {
+    // inject可以传两个参数，一个是名字，一个是没取到的时候的默认值
     const name = inject("name");
     const counter = inject("counter");
 
