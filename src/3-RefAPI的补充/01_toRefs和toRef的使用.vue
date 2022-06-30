@@ -13,10 +13,10 @@ export default {
     // 响应式的
     const info = reactive({ name: "chen", age: 12 });
 
-    // 只是赋值而已，不是响应式的
+    // 我们从info中直接解构出来，只是赋值而已，不是响应式的
     // let { name, age } = info;
 
-    // 我们希望解构出来的name，age还是响应式的, 会创建两个ref对对象
+    // 我们希望解构出来的name，age还是响应式的, 会创建两个ref对对象，相当于 ref(name) 跟 ref(age)
     // 1.toRefs：将reactive对象中的所有属性都转成ref，建立连接, 相当于引用的同一个地方
     let { name, age } = toRefs(info);
 
@@ -46,5 +46,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

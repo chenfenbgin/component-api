@@ -1,5 +1,5 @@
-import { createApp } from 'vue'
-import App from './7-componentAPI练习/App.vue'
+import { createApp } from "vue";
+import App from "./4-computed和watch/06-watch侦听多个数据源.vue";
 
 const app = createApp(App);
 
@@ -19,5 +19,4 @@ const app = createApp(App);
 //   }
 // })
 
-
-app.mount('#app')
+app.mount("#app");

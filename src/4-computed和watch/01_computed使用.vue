@@ -13,12 +13,14 @@ export default {
   setup() {
     const firstName = ref("尘");
     const lastName = ref("浮生");
+    // 这么写的化fullName不是响应式的;我们需要写成computed，才是响应式的
+    // const fullName = firstName.value + " " + lastName.value;
 
-    // 1.用法一：传入一个getter函数
+    // 1.computed用法一：传入一个getter函数
     // computed的返回值是一个ref对象
     // const fullName = computed(() => firstName.value + lastName.value);
 
-    // 2.用法二：传入一个对象，对象包含getter/setter
+    // 2.computed用法二：传入一个对象，对象包含getter/setter
     const fullName = computed({
       get: () => firstName.value + lastName.value,
       set(newValue) {
@@ -42,5 +44,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

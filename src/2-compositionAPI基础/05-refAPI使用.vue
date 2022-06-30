@@ -20,8 +20,10 @@ export default {
     },
   },
   setup() {
-    // reactive API对传入的类型是有所限制的，要求我们必须传入一个对象或者数组类型，如果我们传入一个基本类型（String、Number、Boolean）会报一个警告
-    // const counter = reactive(100) //报警告， 要使用Ref API, ref会返回一个可变的响应式对象，该对象作为一个响应式的引用，维护它内部的值，
+    // reactive API对传入的类型是有所限制的，要求我们必须传入一个对象或者数组类型，
+    // 如果我们传入一个基本类型（String、Number、Boolean）会报一个警告
+    // 报警告， 要使用Ref API, ref会返回一个可变的响应式对象，该对象作为一个响应式的引用，维护它内部的值，
+    // const counter = reactive(100)
 
     // counter = 100; //100是数值类型
     // 100变成了一个ref的可响应式的引用
@@ -35,10 +37,9 @@ export default {
     return {
       counter,
       increment,
-    }
+    };
   },
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

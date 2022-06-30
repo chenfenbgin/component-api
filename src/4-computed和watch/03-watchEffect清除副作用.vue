@@ -8,21 +8,22 @@
 
 <script type="text/javascript">
 import { watchEffect, ref } from "vue";
-/**
- * Options api中，我们可以通过watch选项来侦听data 或者 props的数据变化
- */
+
 export default {
   setup() {
-    // watchEffect： 会自动收集响应式的依赖
     const name = ref("chen");
     const age = ref(13);
 
-    // 立即执行一次， name
     const stop = watchEffect((onInvalidate) => {
-      // 根据name和age两个变量发送网络请求
+      const timer = setTimeout(() => {
+        console.log("网络请求成功");
+      }, 2000);
+      // 根据name和age两个变量发送网络请求， 上一次请求产生的过程，称之为副作用
+      // 就是比如在修改age的时候，onInvalidate()函数会优先被调用了一下， 可以做一些相关的清除操作
       onInvalidate(() => {
         //在这个函数中， 清除额外的副作用
-        // request.cancel();
+        // request.cancel();//取消请求
+        clearTimeout(timer);
         console.log("onInvalidate");
       });
 
@@ -48,5 +49,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

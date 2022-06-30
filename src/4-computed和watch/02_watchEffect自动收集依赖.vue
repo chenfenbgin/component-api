@@ -10,6 +10,7 @@
 import { watchEffect, ref } from "vue";
 /**
  * Options api中，我们可以通过watch选项来侦听data 或者 props的数据变化
+ * Component Api中，有两个选择： 1.使用watchEffect, 2.使用watch
  */
 export default {
   setup() {
@@ -20,8 +21,12 @@ export default {
     const changeName = () => (name.value = "liu");
     const changeAge = () => age.value++;
 
-    // 立即执行一次， name
+    // 回调函数默认执行一次，立即执行一次， name
     watchEffect(() => {
+      // watchEffect可以自动收集可响应式的依赖
+      // 点击按钮的时候，name有执行, age没有执行,因为age没被收集过依赖
+      // console.log("name:====", name.value);
+
       console.log("name:====", name.value, "age: ", age.value);
     });
 
@@ -35,5 +40,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
